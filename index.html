@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/ressources/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css" integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWFFCVKMXD"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DWFFCVKMXD');
+  </script>
+
+  <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LehvAwrAAAAAJzb4IuBC7Hxmd3Ghq4ZSZzcIdQm"></script>
+
+  <script>
+      grecaptcha.ready(() => {
+          grecaptcha.execute("6LehvAwrAAAAAJzb4IuBC7Hxmd3Ghq4ZSZzcIdQm", { action: 'validate_captcha' }).then(token => {
+              //console.log(token);
+          document.querySelector('.recaptcha-token').value = token;
+          });
+      });
+  </script> -->
+
+
+
+  <script>
+    function addTitleToLinks() {
+      var links = document.querySelectorAll('a');
+
+      links.forEach(function (link) {
+        if (!link.hasAttribute('title')) {
+          var linkText = link.textContent;
+          link.setAttribute('title', linkText);
+        }
+      });
+    }
+
+    addTitleToLinks();
+  </script>
+
+  <title>Coursier Urgent Paris | Livraison à Paris et Banlieue</title>
+<meta property="og:title" content="Coursier Urgent Paris | Livraison à Paris et Banlieue" />
+<meta property="og:locale" content="fr_FR" />
+<meta name="description" content="Coursier Urgent Paris, votre coursier express de référence dans la région parisienne. Découvrez notre service rapide et sécurisé pour vos livraisons !" />
+<meta property="og:description" content="Coursier Urgent Paris, votre coursier express de référence dans la région parisienne. Découvrez notre service rapide et sécurisé pour vos livraisons !" />
+<meta name="keywords" content="Coursier urgent paris" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="" />
+<meta name="google-site-verification" content="hN4_ituHF27zT8JOJ5muRD3HbDG0U2tbN8-zrOmdhaI" />
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebSite",
+"url":"http://localhost:4000/",
+"description":"Coursier Urgent Paris, votre coursier express de référence dans la région parisienne. Découvrez notre service rapide et sécurisé pour vos livraisons !",
+"name":"Coursier Urgent Paris | Livraison à Paris et Banlieue"
+}
+</script>
+
+</head>
+
+<body>
+  <div id="navbar">
+  <a href="./index.html">
+      <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
+  </a>
+  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+  <nav id="navbar-nav">
+      <a href="./index.html">Accueil</a>
+      <a href="./demenagement.html">Déménagement</a>
+      <a href="./nos-vehicules.html">Nos véhicules</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./devis.html" class="alt"><span>Devis</span></a>
+  </nav>
+</div>
+
+  
+  <div id="page-wrapper">
+  <header id="header" class="overflow header home">
+    <img src="./assets/img/home (1).png" alt="" id="header-img"
+      style="object-fit: contain !important">
+    <div id="header-content">
+      <h1><span class="theme-color">Flex Courses</span> : Coursier Urgent à Paris (75)</h1>
+
+      <a href="./devis.html" class="btn btn-devis mx-auto"><span>DEVIS GRATUIT</span></a>
+    </div>
+  </header>
+  
+  
+
+
+  <div class="">
+    <div id="estimation">
+
+  <form class="form" id="estimation-form" method="POST" action="https://jgviaboye9.execute-api.eu-west-3.amazonaws.com/prod/notify">
+    <input type="hidden" name="lang" value="fr" />
+    <input type="hidden" name="redirectUrl" value="/message-envoye" />
+    <input type="hidden" name="type" value="contact" />
+    <input type="hidden" name="website" value="" />
+    <input type="hidden" name="lang" value="fr" />
+    <input type="hidden" name="firstName" value="" />
+    <input type="hidden" name="key" value="6LfqFKwsAAAAAC8580ehkyRRHTLuSIFQS98PxEIp" />
+    <div id="address-group">
+      <div class="simple-form-group">
+        <div class="icon">
+          Départ
+        </div>
+        <input type="text" name="adresse_depart" class="simple-form address-group-top" placeholder="Adresse de départ"
+          value="" required="">
+      </div>
+      <div class="simple-form-group">
+        <div class="icon">
+          Arrivée
+        </div>
+        <input type="text" name="adresse_arrivee" class="simple-form address-group-bottom"
+          placeholder="Adresse d'arrivée" value="" required="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="simple-form-group">
+          <div class="icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 23.3333C19.5278 23.3333 19.1322 23.1733 18.8133 22.8533C18.4933 22.5344 18.3333 22.1389 18.3333 21.6666C18.3333 21.1944 18.4933 20.7983 18.8133 20.4783C19.1322 20.1594 19.5278 20 20 20C20.4722 20 20.8683 20.1594 21.1883 20.4783C21.5072 20.7983 21.6667 21.1944 21.6667 21.6666C21.6667 22.1389 21.5072 22.5344 21.1883 22.8533C20.8683 23.1733 20.4722 23.3333 20 23.3333ZM13.3333 23.3333C12.8611 23.3333 12.465 23.1733 12.145 22.8533C11.8261 22.5344 11.6667 22.1389 11.6667 21.6666C11.6667 21.1944 11.8261 20.7983 12.145 20.4783C12.465 20.1594 12.8611 20 13.3333 20C13.8056 20 14.2017 20.1594 14.5217 20.4783C14.8406 20.7983 15 21.1944 15 21.6666C15 22.1389 14.8406 22.5344 14.5217 22.8533C14.2017 23.1733 13.8056 23.3333 13.3333 23.3333ZM26.6667 23.3333C26.1944 23.3333 25.7989 23.1733 25.48 22.8533C25.16 22.5344 25 22.1389 25 21.6666C25 21.1944 25.16 20.7983 25.48 20.4783C25.7989 20.1594 26.1944 20 26.6667 20C27.1389 20 27.5344 20.1594 27.8533 20.4783C28.1733 20.7983 28.3333 21.1944 28.3333 21.6666C28.3333 22.1389 28.1733 22.5344 27.8533 22.8533C27.5344 23.1733 27.1389 23.3333 26.6667 23.3333ZM20 30C19.5278 30 19.1322 29.84 18.8133 29.52C18.4933 29.2011 18.3333 28.8055 18.3333 28.3333C18.3333 27.8611 18.4933 27.4655 18.8133 27.1466C19.1322 26.8266 19.5278 26.6666 20 26.6666C20.4722 26.6666 20.8683 26.8266 21.1883 27.1466C21.5072 27.4655 21.6667 27.8611 21.6667 28.3333C21.6667 28.8055 21.5072 29.2011 21.1883 29.52C20.8683 29.84 20.4722 30 20 30ZM13.3333 30C12.8611 30 12.465 29.84 12.145 29.52C11.8261 29.2011 11.6667 28.8055 11.6667 28.3333C11.6667 27.8611 11.8261 27.4655 12.145 27.1466C12.465 26.8266 12.8611 26.6666 13.3333 26.6666C13.8056 26.6666 14.2017 26.8266 14.5217 27.1466C14.8406 27.4655 15 27.8611 15 28.3333C15 28.8055 14.8406 29.2011 14.5217 29.52C14.2017 29.84 13.8056 30 13.3333 30ZM26.6667 30C26.1944 30 25.7989 29.84 25.48 29.52C25.16 29.2011 25 28.8055 25 28.3333C25 27.8611 25.16 27.4655 25.48 27.1466C25.7989 26.8266 26.1944 26.6666 26.6667 26.6666C27.1389 26.6666 27.5344 26.8266 27.8533 27.1466C28.1733 27.4655 28.3333 27.8611 28.3333 28.3333C28.3333 28.8055 28.1733 29.2011 27.8533 29.52C27.5344 29.84 27.1389 30 26.6667 30ZM8.33333 36.6666C7.41667 36.6666 6.63167 36.3405 5.97833 35.6883C5.32611 35.035 5 34.25 5 33.3333V9.99998C5 9.08331 5.32611 8.29887 5.97833 7.64665C6.63167 6.99331 7.41667 6.66665 8.33333 6.66665H10V4.99998C10 4.52776 10.1594 4.13165 10.4783 3.81165C10.7983 3.49276 11.1944 3.33331 11.6667 3.33331C12.1389 3.33331 12.535 3.49276 12.855 3.81165C13.1739 4.13165 13.3333 4.52776 13.3333 4.99998V6.66665H26.6667V4.99998C26.6667 4.52776 26.8267 4.13165 27.1467 3.81165C27.4656 3.49276 27.8611 3.33331 28.3333 3.33331C28.8056 3.33331 29.2011 3.49276 29.52 3.81165C29.84 4.13165 30 4.52776 30 4.99998V6.66665H31.6667C32.5833 6.66665 33.3683 6.99331 34.0217 7.64665C34.6739 8.29887 35 9.08331 35 9.99998V33.3333C35 34.25 34.6739 35.035 34.0217 35.6883C33.3683 36.3405 32.5833 36.6666 31.6667 36.6666H8.33333ZM8.33333 33.3333H31.6667V16.6666H8.33333V33.3333Z"
+                fill="#2C285A"></path>
+            </svg>
+          </div>
+          <input type="date" name="date" class="simple-form" placeholder="Date envisagée" value="" required="">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <select name="heure" class="simple-form" required="">
+          <option value="" disabled="" selected="">heures</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select name="minutes" class="simple-form" required="">
+          <option value="" disabled="" selected="">minutes</option>
+          <option value="00">00</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="50">50</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input type="text" class="simple-form" name="nom" placeholder="Nom" value="" required="">
+      </div>
+      <div class="col-md-6">
+        <input type="tel" class="simple-form" name="telephone" placeholder="Téléphone" value="" required="">
+      </div>
+    </div>
+    <input type="email" class="simple-form" name="email" placeholder="Email" value="" required="">
+    <input type="text" name="objet" class="simple-form" placeholder="Que souhaitez-vous transporter ?" value=""
+      required="">
+
+    <div class="row ">
+      <div class="col-xs-12 text-center">
+        <div class="row justify-content-center">
+          <div class="checkbox d-flex mb-5 mx-5 justify-content-center">
+            <input name="condition" type="checkbox"
+              style="height:1rem; text-align: left; width:1rem; vertical-align: middle; margin-right: 1rem; margin-left: 1rem;" />
+            <span class="contact_content-form--label"
+              style="font-size: .8rem !important; font-weight: 400 !important; color: #000;">
+              En utilisant ce formulaire, vous acceptez le stockage et la gestion
+              de vos données par ce site * <a href="#" data-toggle="modal" class="link" data-target="#modal-rgpd"><i
+                  class="fa fa-info-circle"></i></a></span>
+            <i class="fa fa-info-square" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div id="contact-form-response"></div>
+        <div class="form-group d-flex justify-content-center">
+          <div class="g-recaptcha" data-sitekey="6LfqFKwsAAAAAIcqyaY_HMXsaKFrYqlLhr1b8MhU">
+          </div>
+          <br />
+          <input style="display: none" type="submit" value="Submit" class="wpcf7-wpcf7-submit" />
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" value="Demande de devis" class="form-submit mt-4" name="estimate">
+  </form>
+</div>
+
+<div class="container section">
+  <div class="title">
+    <h2 class="text-center">Avec <span class="theme-color">Flex Courses <img src="./assets/img/logo_truck.png"
+          alt="Logo Flex Courses" class="logo-end"></span>
+    </h2>
+  </div>
+  <div class="icon-row">
+    <div class="icon slideInLeft animate" data-anim="slideInLeft">
+      <img src="./assets/img/camion.png" alt="Icône Livraison rapide">
+      <p>Livraison <span class="theme-color">rapide</span></p>
+    </div>
+    <div class="icon-arrow slideInLeft" data-anim="slideInLeft" data-delay="200">
+      <img src="./assets/img/fleche.png" alt="Icône Flèche">
+    </div>
+    <div class="icon slideInLeft animate" data-anim="slideInLeft" data-delay="400">
+      <img src="./assets/img/chauffeur.png" alt="Icône Personnel de confiance">
+      <p>Personnel de <span class="theme-color">confiance</span></p>
+    </div>
+    <div class="icon-arrow slideInLeft" data-anim="slideInLeft" data-delay="600">
+      <img src="./assets/img/fleche.png" alt="Icône Flèche">
+    </div>
+    <div class="icon slideInLeft animate" data-anim="slideInLeft" data-delay="800">
+      <img src="./assets/img/maison.png" alt="Icône Réception en toute sécurité">
+      <p>Réception en toute <span class="theme-color">sécurité</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="container section">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center"><span class="theme-color">Flex Courses</span> : Des services de coursier à Paris de
+        qualité supérieure</h2>
+    </div>
+    <div class="col-12">
+      <p class="text-center">
+        Flex Courses, votre entreprise de <strong>coursier urgent à Paris. </strong> Nous sommes spécialisés dans le
+        transport de marchandises. Que vous ayez besoin d’un service de livraison rapide pour votre entreprise ou pour
+        un déménagement, nous sommes là pour répondre à tous vos besoins.
+      </p>
+      <p class="text-center">
+        Nous sommes fiers d’être l’un des meilleurs <strong>coursiers urgent Paris. </strong> Notre entreprise est
+        dédiée à fournir des services de transport de qualité supérieure à tous nos clients. Nous avons une flotte de
+        véhicules pour répondre à toutes les exigences de transport.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container section">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">Notre flotte <span class="theme-color">de véhicules</span></h2>
+    </div>
+    <div class="col-12">
+      <p class="text-center">
+        Nous avons une variété de véhicules pour répondre à tous les besoins de transport pour nos clients.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="mb-5 col-md-3 zoom-img-on-hover slideInLeft" data-anim="slideInLeft">
+      <img src="./assets/img/coursier.png" alt="Mise à disposition d’un coursier" class="d-block mx-auto mb-4"
+        style="height: 100px">
+      <h3 class="p bold text-center">Mise à disposition d’un coursier</h3>
+    </div>
+    <div class="mb-5 col-md-6 align-flex-end d-none d-md-block slideInTop" data-anim="slideInTop" data-delay="300">
+      <img src="./assets/img/arrow-straight-right.png" alt="Flèche">
+    </div>
+    <div class="mb-5 col-md-3 zoom-img-on-hover slideInLeft" data-anim="slideInLeft" data-delay="600">
+      <img src="./assets/img/check.png" alt="Tournée régulière" class="d-block mx-auto mb-5" style="height: 100px">
+      <h3 class="p bold text-center">Tournée régulière</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-5 col-md-4 text-end d-none d-md-block slideInLeft" data-anim="slideInLeft" data-delay="300">
+      <img src="./assets/img/arrow-turn-right.png" alt="Flèche">
+    </div>
+    <div class="mb-5 col-md-4 zoom-img-on-hover slideInBottom" data-anim="slideInBottom" data-delay="600">
+      <img src="./assets/img/box.png" alt="Livraison rapide " class="d-block mx-auto mb-4" style="height: 100px">
+      <h3 class="p bold text-center">Livraison rapide </h3>
+    </div>
+    <div class="mb-5 col-md-4 d-none d-md-block slideInRight" data-anim="slideInRight" data-delay="300">
+      <img src="./assets/img/arrow-turn-left.png" alt="Flèche">
+    </div>
+  </div>
+</div>
+
+<div class="container section">
+  <div class="row">
+    <div class="col-md-5 center-y slideInLeft" data-anim="slideInLeft">
+      <h2>Services de livraison rapide</h2>
+      <p>
+        Flex Courses s'impose comme votre partenaire de confiance pour les livraisons urgentes à Paris. Notre
+        entreprise propose une gamme complète de services de livraison rapide spécialement conçus pour répondre aux
+        exigences des entreprises modernes. Que vous ayez besoin de transporter des documents confidentiels ou des
+        produits de valeur, notre équipe de coursiers professionnels est à votre disposition pour garantir une
+        livraison rapide, sécurisée et efficace.
+        <br>
+        <strong>Livraison express</strong>
+        <br>
+        Notre service de livraison express est la solution idéale pour les entreprises qui exigent une rapidité
+        maximale. Chez Flex Courses, nous comprenons parfaitement que chaque minute compte dans le monde des affaires.
+        C'est pourquoi nous nous engageons à optimiser chaque étape du processus de livraison. Nos coursiers experts
+        utilisent des itinéraires soigneusement étudiés pour assurer une livraison ultra-rapide de vos colis. De plus,
+        nous vous offrons la tranquillité d'esprit grâce à notre système de suivi en temps réel, vous permettant de
+        localiser vos envois à tout moment. Notre engagement envers la ponctualité est inébranlable, même dans les
+        situations les plus urgentes.
+        <br>
+        <strong>Livraison de colis</strong>
+        <br>
+        Flex Courses excelle également dans la livraison de colis à travers Paris et sa région. Notre service se
+        distingue par sa flexibilité remarquable, s'adaptant avec précision à vos besoins spécifiques. Quelle que soit
+        la taille ou la nature de vos biens, vous pouvez compter sur notre manipulation experte et soigneuse. Nous
+        proposons des options de livraison le jour même pour vos urgences, ainsi que des livraisons programmées pour
+        une planification optimale de vos envois.
+      </p>
+    </div>
+
+    <div class="col-md-7 px-md-5 center-y slideInRight" data-anim="slideInRight" data-delay="400">
+      <img src="./assets/img/camion2.png" alt="photo de camion" class="w-100">
+    </div>
+  </div>
+</div>
+
+<div class="container section">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2 class="text-center">Pourquoi choisir notre équipe de transporteur Paris</h2>
+    </div>
+    <div class="col-12">
+      <p class="text-center">
+        <strong>Nous sommes fiers de fournir des services de coursier urgent à Paris.</strong> Voici quelques raisons
+        pour lesquelles vous devriez choisir Flex Courses pour vos besoins de transport et de livraison :
+      </p>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card blue slideInLeft" data-anim="slideInLeft">
+        <img src="./assets/img/check.png" alt="picto validation">
+        <h2 class="text-center">Chauffeurs professionnels</h2>
+        <p>
+          Tous nos chauffeurs sont professionnels et expérimentés. Ils connaissent bien les rues de Paris et sont
+          formés pour fournir un service de qualité supérieure à nos clients.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card blue slideInRight" data-anim="slideInRight">
+        <img src="./assets/img/check.png" alt="picto validation">
+        <h2 class="text-center">Véhicules performants</h2>
+        <p>
+          Nous avons une flotte de véhicules de qualité pour répondre à tous les besoins de transport. Tous nos
+          véhicules sont bien entretenus et équipés de fonctionnalités de sécurité et de confort.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card blue slideInBottom" data-anim="slideInBottom">
+        <img src="./assets/img/check.png" alt="picto validation">
+        <h2 class="text-center">Service de qualité</h2>
+        <p>
+          <strong>Notre entreprise de coursier urgent Paris s’engage à fournir un service de qualité supérieure à nos
+            clients.</strong> Nous sommes disponibles 24h/24 et 7j/7 pour répondre à tous vos besoins de transport et
+          de livraison.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container section">
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <h2 class="text-center"><span class="color-theme">Transporteur Paris</span> de confiance</h2>
+      <p class="text-center">
+        Chez Flex Courses, nous sommes fiers d’être le coursier Paris de confiance pour nos clients. Nous offrons une
+        gamme de services de transport et de livraison pour répondre à tous vos besoins. <strong>Que vous ayez besoin
+          de livrer des produits à des clients ou d’un transport de meubles, nous sommes là pour vous aider.</strong>
+      </p>
+    </div>
+    <div class="col-md-12 mb-3">
+      <div class="card theme slideInRight" data-anim="slideInRight" data-delay="400">
+        <h3 class="text-center">Transport sécurisé</h3>
+        <p class="text-center mb-5">
+          Nous utilisons des véhicules équipés de fonctionnalités de sécurité et tous nos chauffeurs sont formés pour
+          conduire en toute sécurité. Vous pouvez être assurés que vos produits seront livrés en toute sécurité.
+        </p>
+
+        <h3 class="text-center">Fiabilité</h3>
+        <p class="text-center mb-5">
+          <strong>Nous sommes fiables et nous tenons toujours nos promesses en termes de délais et de qualité de
+            service.</strong> Vous pouvez compter sur nous pour livrer vos produits en toute sécurité et à temps.
+        </p>
+
+        <h3 class="text-center">Flexibilité</h3>
+        <p class="text-center mb-5">
+          <strong>Nous offrons une grande flexibilité dans nos services de transport et de livraison.</strong> Que
+          vous ayez besoin d’un transport urgent ou d’une livraison à une heure précise, nous sommes là pour répondre
+          à vos besoins.
+        </p>
+
+        <h3 class="text-center">Professionnalisme</h3>
+        <p class="text-center mb-5">
+          Nous sommes une entreprise professionnelle et nous traitons tous nos clients avec le plus grand respect et
+          la plus grande courtoisie. Notre équipe de coursier Paris vous assure un service de qualité supérieure.
+        </p>
+
+        <h3 class="text-center">Économie de temps et d’argent</h3>
+        <p class="text-center mb-5">
+          En choisissant notre service de coursier Paris, vous pouvez économiser du temps et de l’argent en évitant
+          les retards, les frais supplémentaires et les erreurs de livraison. Nous sommes là pour vous aider à
+          optimiser votre temps et vos ressources.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-12 mt-3">
+      <p class="text-center">
+        Chez Flex Courses, nous sommes engagés à fournir un service de qualité supérieure à nos clients. En tant que
+        coursiers Paris de confiance, nous espérons que vous choisirez nos services de transport et de livraison pour
+        répondre à tous vos besoins.
+      </p>
+    </div>
+  </div>
+</div>
+
+<section id="reserver">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <h2 class="text-center"><span class="theme-color">Comment réserver</span> votre service de coursier Paris ?
+        </h2>
+      </div>
+      <div class="text">
+        <p>
+          Réserver votre service de coursier Paris avec Flex Courses est facile et rapide. Vous pouvez réserver en
+          ligne via notre site web ou en nous appelant directement pour parler à l’un de nos représentants du service
+          clientèle. <strong>Nous sommes disponibles 24h/24 pour répondre à toutes vos questions et pour vous aider à
+            planifier votre voyage de luxe à Paris.</strong>
+        </p>
+        <p>
+          Si vous avez des questions ou si vous souhaitez réserver un service de coursier à Paris, n’hésitez pas à
+          nous contacter. <strong>Notre équipe est disponible 24 heures sur 24 et 7 jours sur 7 pour répondre à tous
+            vos besoins de transport et de livraison.</strong> Nous sommes disponibles pour répondre à vos appels à
+          tout moment ou vous pouvez également nous contacter en remplissant notre formulaire de contact en ligne.
+        </p>
+      </div>
+      <div class="pad30"></div>
+      <div class="center">
+        <a href="devis" class="btn btn-lg"><span>OBTENIR UN DEVIS</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+<div class="container section">
+<div class="row">
+<div class="col-md-6 mb-3">
+    <div class="card blue" data-anim="slideInLeft">
+        <h2 class="text-center">Déménagement particulier</h2>
+        <p>Le déménagement est un évènement majeur de la vie, c’est pourquoi nous vous aidons à vous sentir en sécurité lorsque vous déménagez. Le choix d’une entreprise de déménagement commence par la confiance ! C’est pourquoi notre entreprise de <strong>déménagement Paris pas cher</strong> vous accompagne au plus près de votre domicile. Choisir notre entreprise de déménagement Paris pas cher, c’est choisir des déménageurs individuels qui partagent notre engagement et notre professionnalisme. Nous sommes également une entreprise de déménagement qui s’engage à utiliser notre gamme d’équipements spécialement conçus pour protéger vos meubles et garantir un déménagement sans stress.</p><br>
+        <div class="center">
+            <a href="contact" class="btn btn-lg"><span>EN SAVOIR PLUS</span></a>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 mb-3">
+    <div class="card theme" data-anim="slideInRight" data-delay="400">
+        <h2 class="text-center">Transfert d’entreprise</h2>
+        <p>Nos déménageurs de Paris peuvent vous aider à déménager votre entreprise avec professionnalisme. Qu’il s’agisse de bureaux ou d’industries, nous avons la solution pour votre déménagement. Depuis de nombreuses années, nos déménageurs parisiens mettent leur expertise au service de l’optimisation du déménagement des entreprises, bureaux et industries. Les déménageurs parisiens effectuent régulièrement de nombreux déménagements d’entreprises. Au fil des ans, ils ont réalisé tous types de déménagements d’entreprises (déménagements de bureaux, déménagements industriels, déménagements d’archives, etc.). Cela leur a permis d’acquérir une expérience significative dans ce domaine.</p>
+        <div class="center">
+            <a href="contact" class="btn btn-lg"><span>EN SAVOIR PLUS</span></a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="container section">
+<div class="row">
+<div class="col-md-5 center-y" data-anim="slideInLeft">
+    <h2>Déménagement Paris pas cher</h2>
+    <p>Flex Courses, entreprise de <strong>déménagement Paris pas cher</strong> en France s’occupe de votre déménagement pour un service de haute qualité. La société de déménagement pas cher Paris peut également louer des garde-meubles. Nous gérons l’ensemble du processus de déménagement afin de garantir la protection de vos biens. Les entreprises spécialisées dans les déménagements bon marché à Paris disposent de professionnels aux compétences avérées et des équipements et véhicules adéquats pour rendre le déménagement simple et sécurisé. Chaque service est personnalisé, de sorte que chaque déménagement est complètement différent.</p>
+    <p>C’est pourquoi vous pouvez obtenir un devis personnalisé entièrement gratuit. Chaque devis est là pour évaluer l’ampleur de votre futur déménagement et mieux comprendre vos besoins. Certaines personnes ont beaucoup d’objets fragiles, tandis que d’autres ont des objets volumineux qui sont difficiles à manipuler et à transporter.</p>
+    <p>Enfin, Flex Courses peut réaliser votre déménagement sur mesure. Vous pouvez externaliser tout ou une partie de votre déménagement. <strong>En effet, nos déménageurs pas chers à Paris peuvent se charger de l’ensemble du déménagement du début à la fin,</strong> en commençant par l’emballage des objets fragiles et en terminant par leur installation dans votre nouveau logement.</p>
+</div>
+<div class="col-md-7 px-md-5 center-y" data-anim="slideInRight" data-delay="400">
+    <img src="./assets/img/hp_1.png" alt="Livraison" class="w-100">
+</div>
+</div>
+</div>
+
+<div class="container section">
+<div class="row">
+<div class="col-md-4 mb-5 mt-5">
+    <div class="card shadow has-top-icon">
+        <img src="./assets/img/camion2.png" alt="" class="card-top-icon">
+        <h3>Déménagements spéciaux</h3>
+        <p>Il peut y avoir des exigences particulières en matière de déménagement pour le transport d’articles fragiles ou de valeur tel que les miroirs fragiles, les antiquités, les armoires anciennes, les tableaux et autres œuvres d’art. Ces objets nécessitent une manipulation précise et une protection spécialement adaptée. <strong>Ces objets sont garantis par notre service de déménagement professionnel expérimenté dans le transport de déménagements spéciaux.</strong></p>
+    </div>
+</div>
+<div class="col-md-4 mb-5 mt-5">
+    <div class="card shadow has-top-icon">
+        <img src="./assets/img/demenageur.png" alt="" class="card-top-icon">
+        <h3>Monte Meubles</h3>
+        <p> Vous devez être équipés du bon matériel de déménagement pour que votre déménagement soit sans stress et sans souci. <strong>Notre service de déménagement Paris pas cher est là pour vous aider dans ces changements de vie.</strong>Flex Courses peut vous fournir le meilleur service pour vos besoins. Les monte-meubles sont des appareils utilisés pour faire monter ou descendre tous les types de meubles d’un étage à l’autre. Cet équipement mobile est très utile, notamment dans les zones difficiles d’accès ou les escaliers en colimaçon.</p>
+    </div>
+</div>
+<div class="col-md-4 mb-5 mt-5">
+    <div class="card shadow has-top-icon">
+        <img src="./assets/img/maison2.png" alt="" class="card-top-icon">
+        <h3>Garde-meuble</h3>
+        <p>Il se peut que vous ne puissiez pas emménager immédiatement dans votre nouvelle maison en raison de problèmes de dernière minute. Vous souhaitez tout simplement mettre de côté vos meubles pendant que votre nouveau logement est en cours de rénovation. Notre entreprise de déménagement dispose également d’installations de stockage sécurisées équipées de caméras de surveillance. Là encore, les déménageurs transporteront et livreront vos biens, qui seront stockés en toute sécurité dans l’entrepôt, puis livrés à votre nouveau domicile, si vous le souhaitez.</p>
+    </div>
+</div>
+<div class="col-md-4 mb-5 mt-5">
+    <div class="card shadow has-top-icon">
+        <img src="./assets/img/outils.png" alt="" class="card-top-icon">
+        <h3>Démontage / Montage mobilier</h3>
+        <p>En plus d’un déménagement rapide, nos déménageurs professionnels peuvent également démonter tous les meubles encombrants ou difficiles à transporter avant de les emballer, de les charger dans le camion de déménagement et de les monter une fois arriver à destination. D’autant plus que nous disposons de boxs afin de stocker tout votre matériel</p>
+    </div>
+</div>
+<div class="col-md-4 mb-5 mt-5">
+    <div class="card shadow has-top-icon">
+        <img src="./assets/img/dossier.png" alt="" class="card-top-icon">
+        <h3>Formalités et démarches administratives</h3>
+        <p><strong>Notre entreprise de déménagement Paris pas cher peut effectuer des démarches à votre place le jour du déménagement,</strong> ou prendre en charge certaines des étapes déléguées par vous. Par exemple, ils peuvent demander aux autorités des permis de stationnement et de suspension, payer les péages urbains, enlever les déchets encombrants de votre déménagement, transférer les contrats d’énergie et, si vous déménagez à l’étranger, s’occuper des formalités douanières en votre nom.</p>
+    </div>
+</div>
+<div class="col-md-4 mb-5 mt-5">
+    <div class="card shadow has-top-icon">
+        <img src="./assets/img/maison3.png" alt="" class="card-top-icon">
+        <h3>Matériels d’emballage et carton de déménagement</h3>
+        <p>Flex Courses, service de déménagement Paris pas cher, fournissent généralement tous les matériaux d’emballage et les cartons de déménagement gratuitement dans le cadre de leurs services de déménagement spécifiques. Cependant, vous avez la possibilité d’utiliser ces matériaux d’emballage et cartons de déménagement vous-même ou de les acheter pour que les déménageurs les utilisent dans le cadre de leur service d’emballage.</p>
+    </div>
+</div>
+</div>
+</div> 
+
+<section id="prepare">
+<div class="container">
+<div class="title">
+    <h2>Préparer son déménagement</h2>
+</div>
+<div class="text">
+    <p>Un déménagement nécessite une préparation et une organisation minutieuses. En triant soigneusement vos affaires avant le déménagement, vous gagnerez de la place, non seulement dans le camion de déménagement, mais aussi dans votre nouvel appartement. Moins vous aurez de cartons à transporter, moins vous dépenserez d’argent et de temps pour le déménagement. Le fait de mettre au rebut ou de vendre à des œuvres de charité les objets que vous n’utilisez plus peut contribuer à améliorer davantage votre budget de déménagement.</p>
+</div>
+<div class="pad30"></div>
+<div class="left">
+    <a href="contact" class="btn btn-lg"><span>EN SAVOIR PLUS</span></a>
+</div>
+</div>
+</section>
+
+<div class="container py-5 section">
+<div class="card theme-border has-top-left-icon">
+<img src="./assets/img/ampoule.png" alt="" class="card-top-icon">
+<h3>Pourquoi avoir recours à une prestation de déménagement ?</h3>
+<p>Les entreprises de déménagement peuvent se charger de tout le transport et de la livraison de vos biens à votre place, mais elles proposent également toute une série d’autres services pratiques pour vous aider à organiser votre déménagement. Cependant, toutes les entreprises de déménagement ne proposent pas le même niveau de services de déménagement.</p>
+<p>Au lieu de chercher du matériel d’emballage, de contacter les autorités locales, de louer un ascenseur ou de trouver un stockage temporaire, ces services sont offerts dans le cadre du devis de déménagement.</p>
+<p>Avec un professionnel, tout devient simple et les avantages sont nombreux. Laissez le stress de côté, nous nous engageons à mettre à votre disposition tout notre savoir-faire et notre expertise pour que votre déménagement se passe dans les meilleures conditions possibles. </p>
+</div>
+</div> -->
+</div>
+  </div>
+
+
+  <div id="sticky">
+    <a href="tel:0189430778" class="btn btn-estimation"><span>01 89 43 07 78</span></a>
+</div>
+
+
+  <div class="backTotop active">
+    <a href="#">
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+  </div>
+
+
+  <footer id="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <h3>Liens utiles</h3>
+              <a href="./index.html" class="footer-link">Accueil</a>
+              <a href="./livraisons-specifiques.html" class="footer-link">Livraisons spécifiques</a>
+              <a href="./entreprise-prestations-conciergerie.html" class="footer-link">Conciergerie entreprise</a>
+              <a href="./entreprise-transfert-d-entreprises.html" class="footer-link">Transfert d'entreprise</a>
+              <a href="./entreprise-transport-urgent.html" class="footer-link">Transport urgent entreprise</a>
+              <a href="./particulier-prestations-particuliers.html" class="footer-link">Particulier</a>
+              <a href="./coursier-essonne.html" class="footer-link">Coursier Essonne</a>
+              <a href="./contact.html" class="footer-link">Contact</a>
+              <a href="./devis.html" class="footer-link">Devis</a>
+          </div>
+          <div class="col-md-4 align-center">
+              <img src="./assets/img/logo_gradient-v2.png" alt="Logo Flex Courses">
+              <a href="./coursier-paris-pas-cher.html" class="footer-link">COURSIER PARIS PAS CHER</a>
+              <a href="./transport-de-materiel-special.html" class="footer-link">TRANSPORT DE MATÉRIEL SPÉCIAL</a>
+              <a href="./transport-materiel-medical-paris.html" class="footer-link">TRANSPORT MATÉRIEL MÉDICAL PARIS</a>
+              <a href="./transport-materiel-audiovisuel-paris.html" class="footer-link">TRANSPORT MATÉRIEL AUDIOVISUEL PARIS</a>
+              <a href="./mentions-legales.html" class="footer-link">MENTIONS LÉGALES</a>
+          </div>
+          <div class="col-md-4 align-right">
+              <h3>Coordonnées</h3>
+              <a href="tel:0189430778" class="footer-link">
+                  <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M24.9858 17.5195C24.9262 17.1921 24.6951 16.9123 24.3491 16.7461L19.2294 14.0668L19.1873 14.0458C18.9726 13.9504 18.7355 13.9015 18.4955 13.9031C18.0665 13.9031 17.6569 14.0474 17.3726 14.3006L15.8615 15.6434C15.7969 15.6979 15.5862 15.7769 15.5222 15.7798C15.5047 15.7785 13.764 15.6672 10.5594 12.8204C7.36044 9.97962 7.22472 8.4287 7.22365 8.4287C7.22544 8.3494 7.3133 8.16287 7.3758 8.10513L8.66437 6.9609C9.1183 6.55675 9.25437 5.88677 8.98509 5.36779L6.13936 0.611612C5.93258 0.233478 5.53079 0 5.08507 0C4.76972 0 4.46543 0.116105 4.22757 0.32706L0.715062 3.44C0.378275 3.73756 0.088274 4.25781 0.0250595 4.67655C-0.00565488 4.87672 -0.628871 9.65478 6.74615 16.2065C13.0072 21.7671 17.8894 22.1992 19.2376 22.1992C19.4018 22.2011 19.566 22.1935 19.729 22.1767C20.199 22.1208 20.7841 21.8639 21.1187 21.566L24.6283 18.4489C24.9148 18.1932 25.0455 17.8554 24.9858 17.5195Z" fill="#F1C403" />
+                      <script xmlns="" />
+                  </svg>
+                  01 89 43 07 78</a>
+              <a href="mailto:contact@flexcourses.fr" class="footer-link">
+                  <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.7272 0C23.33 0 23.9081 0.237053 24.3343 0.65901C24.7605 1.08097 25 1.65326 25 2.25V15.75C25 16.3467 24.7605 16.919 24.3343 17.341C23.9081 17.7629 23.33 18 22.7272 18H4.54442C3.94163 18 3.36352 17.7629 2.93728 17.341C2.51104 16.919 2.27158 16.3467 2.27158 15.75V14.625H4.54442V15.75H22.7272V3.85087L14.8461 11.6528C14.5264 11.9691 14.0929 12.1468 13.6409 12.1468C13.1889 12.1468 12.7554 11.9691 12.4357 11.6528L4.54442 3.84075V4.5H2.27158V2.25C2.27158 1.65326 2.51104 1.08097 2.93728 0.65901C3.36352 0.237053 3.94163 0 4.54442 0H22.7272ZM6.81727 10.125C7.10692 10.1253 7.38551 10.2351 7.59613 10.432C7.80675 10.6288 7.9335 10.8978 7.95047 11.1841C7.96745 11.4703 7.87337 11.7522 7.68746 11.9721C7.50156 12.1919 7.23785 12.3333 6.95023 12.3671L6.81727 12.375H1.13516C0.845511 12.3747 0.566915 12.2649 0.356295 12.068C0.145675 11.8712 0.0189295 11.6022 0.00195468 11.3159C-0.0150202 11.0297 0.079057 10.7478 0.264964 10.5279C0.450872 10.3081 0.714577 10.1667 1.0022 10.1329L1.13516 10.125H6.81727ZM5.68085 6.75C5.98224 6.75 6.2713 6.86853 6.48442 7.0795C6.69754 7.29048 6.81727 7.57663 6.81727 7.875C6.81727 8.17337 6.69754 8.45952 6.48442 8.6705C6.2713 8.88147 5.98224 9 5.68085 9H2.27158C1.97019 9 1.68113 8.88147 1.46801 8.6705C1.25489 8.45952 1.13516 8.17337 1.13516 7.875C1.13516 7.57663 1.25489 7.29048 1.46801 7.0795C1.68113 6.86853 1.97019 6.75 2.27158 6.75H5.68085Z" fill="#F1C403" />
+                      <script xmlns="" />
+                  </svg>
+                  contact@flexcourses.fr</a>
+              <a href="https://maps.app.goo.gl/tugKWtsLXmRcHt5i7" target="_blank" rel="noopener noreferrer" class="footer-link">
+                  <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.5 11.5C10.1187 11.5 10.6486 11.2795 11.0896 10.8385C11.5299 10.3982 11.75 9.86875 11.75 9.25C11.75 8.63125 11.5299 8.10138 11.0896 7.66037C10.6486 7.22012 10.1187 7 9.5 7C8.88125 7 8.35175 7.22012 7.9115 7.66037C7.4705 8.10138 7.25 8.63125 7.25 9.25C7.25 9.86875 7.4705 10.3982 7.9115 10.8385C8.35175 11.2795 8.88125 11.5 9.5 11.5ZM9.5 22.75C6.48125 20.1812 4.22675 17.7951 2.7365 15.5916C1.2455 13.3889 0.5 11.35 0.5 9.475C0.5 6.6625 1.40488 4.42188 3.21463 2.75312C5.02363 1.08437 7.11875 0.25 9.5 0.25C11.8812 0.25 13.9764 1.08437 15.7854 2.75312C17.5951 4.42188 18.5 6.6625 18.5 9.475C18.5 11.35 17.7549 13.3889 16.2646 15.5916C14.7736 17.7951 12.5188 20.1812 9.5 22.75Z" fill="#F1C403" />
+                      <script xmlns="" />
+                  </svg>
+                  21 place de la republique 75003 PARIS                </a>
+          </div>
+      </div>
+  </div>
+</footer>
+  <script src="/assets/js/paralax.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      let notification_toggle = document.getElementsByClassName("notification_toggle");
+      let notifications = document.getElementsByClassName("notification");
+      for (let i = 0; i < notification_toggle.length; i++) {
+          notification_toggle[i].addEventListener("click", () => {
+              notifications[i].classList.add("hide");
+              let index = i;
+              setTimeout(() => {
+                  notifications[index].remove()
+              }, 1000);
+          })
+      }
+  })
+</script>
+
+<script>
+  let dropdowns = document.getElementsByClassName("navbar-dropdown");
+
+  for (let i = 0; i < dropdowns.length; i++) {
+      let title = dropdowns[i].querySelector(".dropdown-title");
+      let body = dropdowns[i].querySelector(".dropdown-body");
+
+      title.addEventListener("click", () => {
+          dropdowns[i].classList.toggle("active");
+      })
+
+      body.addEventListener("mouseleave", () => {
+          dropdowns[i].classList.remove("active");
+      })
+
+  }
+
+  $(document).ready(function() {
+      $('a[href^="#"]').bind("click.smoothscroll", function(e) {
+          // Pour annuler l'action déclenchée par le boutton
+          // Ici l'ajout de #page2 dans l'url
+          e.preventDefault();
+
+          var target = this.hash,
+              $target = $(target);
+
+          // On anime la transition jusqu'a l'élément désiré
+          $("html, body").stop().animate({
+                  scrollTop: $target.offset().top - 100,
+              },
+              1500,
+              "swing"
+          );
+      });
+  });
+</script>
+
+<script>
+  $(() => {
+      var $sendBtn = $('.send-button'),
+          $iWrapper = $('.icon-wrapper'),
+          $i1 = $('.icon-1'),
+          $i2 = $('.icon-2');
+
+      function animationEvent() {
+          var t,
+              el = document.createElement('fakeelement');
+
+          var animations = {
+              animation: 'animationend',
+              OAnimation: 'oAnimationEnd',
+              MozAnimation: 'animationend',
+              WebkitAnimation: 'webkitAnimationEnd'
+          };
+
+          for (t in animations) {
+              if (el.style[t] !== undefined) {
+                  return animations[t];
+              }
+          }
+      }
+
+      $sendBtn.on('click', e => {
+          $iWrapper.css('color', '#66bb6a');
+          $iWrapper.addClass('icon-wrapper-animation');
+          $sendBtn.addClass('clicked');
+          $i1.delay(900);
+          $i1.fadeTo(300, 0);
+          $i2.delay(900);
+          $i2.fadeTo(300, 1);
+      });
+
+      $sendBtn.on(animationEvent(), e => {
+          if (e.originalEvent.animationName == 'input-shadow') {
+              $sendBtn.removeClass('clicked');
+          }
+      });
+
+      $iWrapper.on(animationEvent(), e => {
+          if (e.originalEvent.animationName == 'icon-animation') {
+              $iWrapper.removeClass('icon-wrapper-animation');
+              setTimeout(resetDevis, 1200);
+              setTimeout(resetEstimation, 1200);
+          }
+      });
+
+      function resetDevis() {
+      $i1.fadeTo(250, 1);
+      $i2.fadeTo(250, 0);
+      $iWrapper.css('color', '#f8bbd0');
+      document.getElementById("devis-form").submit();
+  }
+  
+      function resetEstimation() {
+          $i1.fadeTo(250, 1);
+          $i2.fadeTo(250, 0);
+          $iWrapper.css('color', '#f8bbd0');
+          document.getElementById("estimation-form").submit();
+      }
+  }); // end of document ready
+</script>
+
+<script src="./assets/js/formSubmit.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+</body>
+
+</html>
