@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -115,8 +144,8 @@
         <p>Le transfert d'entreprise en déménagement implique le déplacement des locaux et des équipements d'une entreprise d'un emplacement à un autre. Cela peut être nécessaire pour de nombreuses raisons, comme la croissance de l'entreprise, le besoin de plus d'espace, la recherche de coûts de location moins élevés ou la nécessité de se rapprocher de clients ou de fournisseurs. Le transfert d'entreprise peut être une tâche complexe et stressante, car il implique souvent la coordination de nombreux éléments différents, tels que le déménagement de l'équipement, la mise en place de nouvelles communications et l'adaptation du personnel et des clients à un nouvel emplacement.</p>
     </div>
 
-    <div class="row mt-5">
-        <div class="col-md-7" id="transfert-left">
+    <div class="row mt-5 transfert-split">
+        <div class="col-12 col-lg-7" id="transfert-left">
             <img src="./assets/img/transfert-1.png" alt="Transfert d'entreprise à Paris et aux alentours" class="w-100 mb-3 zoom-light">
             <h2>Transfert d’entreprise à Paris et <span class="text-white">aux alentours</span></h2>
             <p>Flex Courses  offre une gamme complète de services de déménagement, y compris le transport et le chargement de l'équipement, le démontage et le remontage de meubles et d'équipements, et la mise en place de nouvelles communications et de nouveaux systèmes. Nous sommes en mesure de gérer tous les aspects du transfert d'une entreprise</p>
@@ -132,11 +161,11 @@
             </div>
             <div class="pad30"></div>
             <div class="pad30"></div>
-            <div class="icon" style="display: flex; justify-content: flex-end; margin-bottom: -70px; width: auto; position: relative; right: -15%">
+            <div class="icon decorative-float" style="display: flex; justify-content: flex-end; margin-bottom: -70px; width: auto; position: relative; right: -15%">
                 <img src="./assets/img/rond.png" alt="Rond" class="rotate" style="margin-bottom: -70px; width: fit-content">
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-12 col-lg-5">
             <img src="./assets/img/stars.png" class="rotate" id="stars" alt="Étoiles">
             <div id="transfert-right" class="cadre cadre-coursier">
                 <img src="./assets/img/up.png" class="mx-auto d-block mb-3 mt-3 w-100 zoom-img-on-hover no-cadre-img" alt="">

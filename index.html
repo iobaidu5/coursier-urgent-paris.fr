@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
   <div id="page-wrapper">
@@ -325,8 +354,11 @@
 </div>
 
 <div class="container section">
-  <div class="row">
-    <div class="col-md-5 center-y slideInLeft" data-anim="slideInLeft">
+  <div class="row text-image-row">
+    <div class="col-12 col-lg-7 image-col px-lg-5 center-y slideInRight" data-anim="slideInRight" data-delay="400">
+      <img src="./assets/img/camion2.png" alt="photo de camion" class="w-100">
+    </div>
+    <div class="col-12 col-lg-5 text-col center-y slideInLeft" data-anim="slideInLeft">
       <h2>Services de livraison rapide</h2>
       <p>
         Flex Courses s'impose comme votre partenaire de confiance pour les livraisons urgentes à Paris. Notre
@@ -353,10 +385,6 @@
         proposons des options de livraison le jour même pour vos urgences, ainsi que des livraisons programmées pour
         une planification optimale de vos envois.
       </p>
-    </div>
-
-    <div class="col-md-7 px-md-5 center-y slideInRight" data-anim="slideInRight" data-delay="400">
-      <img src="./assets/img/camion2.png" alt="photo de camion" class="w-100">
     </div>
   </div>
 </div>
@@ -515,15 +543,15 @@
 </div>
 
 <div class="container section">
-<div class="row">
-<div class="col-md-5 center-y" data-anim="slideInLeft">
+<div class="row text-image-row">
+<div class="col-12 col-lg-7 image-col px-lg-5 center-y" data-anim="slideInRight" data-delay="400">
+    <img src="./assets/img/hp_1.png" alt="Livraison" class="w-100">
+</div>
+<div class="col-12 col-lg-5 text-col center-y" data-anim="slideInLeft">
     <h2>Déménagement Paris pas cher</h2>
     <p>Flex Courses, entreprise de <strong>déménagement Paris pas cher</strong> en France s’occupe de votre déménagement pour un service de haute qualité. La société de déménagement pas cher Paris peut également louer des garde-meubles. Nous gérons l’ensemble du processus de déménagement afin de garantir la protection de vos biens. Les entreprises spécialisées dans les déménagements bon marché à Paris disposent de professionnels aux compétences avérées et des équipements et véhicules adéquats pour rendre le déménagement simple et sécurisé. Chaque service est personnalisé, de sorte que chaque déménagement est complètement différent.</p>
     <p>C’est pourquoi vous pouvez obtenir un devis personnalisé entièrement gratuit. Chaque devis est là pour évaluer l’ampleur de votre futur déménagement et mieux comprendre vos besoins. Certaines personnes ont beaucoup d’objets fragiles, tandis que d’autres ont des objets volumineux qui sont difficiles à manipuler et à transporter.</p>
     <p>Enfin, Flex Courses peut réaliser votre déménagement sur mesure. Vous pouvez externaliser tout ou une partie de votre déménagement. <strong>En effet, nos déménageurs pas chers à Paris peuvent se charger de l’ensemble du déménagement du début à la fin,</strong> en commençant par l’emballage des objets fragiles et en terminant par leur installation dans votre nouveau logement.</p>
-</div>
-<div class="col-md-7 px-md-5 center-y" data-anim="slideInRight" data-delay="400">
-    <img src="./assets/img/hp_1.png" alt="Livraison" class="w-100">
 </div>
 </div>
 </div>

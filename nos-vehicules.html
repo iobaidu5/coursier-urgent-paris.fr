@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -111,7 +140,7 @@
 
 <div class="container section">
     <div class="row justify-content-center">
-        <div class="card-vehicule col-md-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="card-vehicule col-12 col-lg-5 d-flex flex-column align-items-center justify-content-center">
             <div class="img-card">
                 <img src="./assets/img/6m3.png" alt="camion 6m3">
             </div>
@@ -127,7 +156,7 @@
             </div>
         </div>
 
-        <div class="card-vehicule col-md-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="card-vehicule col-12 col-lg-5 d-flex flex-column align-items-center justify-content-center">
             <div class="img-card">
                 <img src="./assets/img/9m3.png" alt="camion 9m3">
             </div>
@@ -144,7 +173,7 @@
         </div>
 
 
-        <div class="card-vehicule col-md-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="card-vehicule col-12 col-lg-5 d-flex flex-column align-items-center justify-content-center">
             <div class="img-card">
                 <img src="./assets/img/12m3.png" alt="camion 12m3">
             </div>
@@ -160,7 +189,7 @@
             </div>
         </div>
 
-        <div class="card-vehicule col-md-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="card-vehicule col-12 col-lg-5 d-flex flex-column align-items-center justify-content-center">
             <div class="img-card">
                 <img src="./assets/img/20m3.png" alt="camion 20m3">
             </div>

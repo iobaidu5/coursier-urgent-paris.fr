@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -110,22 +139,22 @@
 </header>
 
 <div class="container section">
-    <div class="row">
-        <div class="col-md-4 center-y" data-anim="slideInLeft">
+    <div class="row text-image-row">
+        <div class="col-12 col-lg-8 image-col px-lg-5 center-y" data-anim="slideInRight" data-delay="400">
+            <img src="./assets/img/hp_1.png" alt="Livraison" class="w-100">
+        </div>
+        <div class="col-12 col-lg-4 text-col center-y" data-anim="slideInLeft">
             <h2>Déménagement Paris pas cher</h2>
             <p>Flex Courses, entreprise de <strong>déménagement Paris pas cher</strong> en France s’occupe de votre déménagement pour un service de haute qualité. La société de déménagement pas cher Paris peut également louer des garde-meubles. Nous gérons l’ensemble du processus de déménagement afin de garantir la protection de vos biens. Les entreprises spécialisées dans les déménagements bon marché à Paris disposent de professionnels aux compétences avérées et des équipements et véhicules adéquats pour rendre le déménagement simple et sécurisé. Chaque service est personnalisé, de sorte que chaque déménagement est complètement différent.</p>
             <p>C’est pourquoi vous pouvez obtenir un devis personnalisé entièrement gratuit. Chaque devis est là pour évaluer l’ampleur de votre futur déménagement et mieux comprendre vos besoins. Certaines personnes ont beaucoup d’objets fragiles, tandis que d’autres ont des objets volumineux qui sont difficiles à manipuler et à transporter.</p>
             <p>Enfin, Flex Courses peut réaliser votre déménagement sur mesure. Vous pouvez externaliser tout ou une partie de votre déménagement. <strong>En effet, nos déménageurs pas chers à Paris peuvent se charger de l’ensemble du déménagement du début à la fin,</strong> en commençant par l’emballage des objets fragiles et en terminant par leur installation dans votre nouveau logement.</p>
-        </div>
-        <div class="col-md-8 px-md-5 center-y" data-anim="slideInRight" data-delay="400">
-            <img src="./assets/img/hp_1.png" alt="Livraison" class="w-100">
         </div>
     </div>
 </div>
 
 <div class="container section">
     <div class="row">
-        <div class="col-md-6 mb-3">
+        <div class="col-12 col-lg-6 mb-3">
             <div class="card blue" data-anim="slideInLeft">
                 <h2 class="text-center">Déménagement particulier</h2>
                 <p>Le déménagement est un évènement majeur de la vie, c’est pourquoi nous vous aidons à vous sentir en sécurité lorsque vous déménagez. Le choix d’une entreprise de déménagement commence par la confiance ! C’est pourquoi notre entreprise de <strong>déménagement Paris pas cher</strong> vous accompagne au plus près de votre domicile. Choisir notre entreprise de déménagement Paris pas cher, c’est choisir des déménageurs individuels qui partagent notre engagement et notre professionnalisme. Nous sommes également une entreprise de déménagement qui s’engage à utiliser notre gamme d’équipements spécialement conçus pour protéger vos meubles et garantir un déménagement sans stress.</p><br>
@@ -134,7 +163,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-12 col-lg-6 mb-3">
             <div class="card theme" data-anim="slideInRight" data-delay="400">
                 <h2 class="text-center">Transfert d’entreprise</h2>
                 <p>Nos déménageurs de Paris peuvent vous aider à déménager votre entreprise avec professionnalisme. Qu’il s’agisse de bureaux ou d’industries, nous avons la solution pour votre déménagement. Depuis de nombreuses années, nos déménageurs parisiens mettent leur expertise au service de l’optimisation du déménagement des entreprises, bureaux et industries. Les déménageurs parisiens effectuent régulièrement de nombreux déménagements d’entreprises. Au fil des ans, ils ont réalisé tous types de déménagements d’entreprises (déménagements de bureaux, déménagements industriels, déménagements d’archives, etc.). Cela leur a permis d’acquérir une expérience significative dans ce domaine.</p>
@@ -163,42 +192,42 @@
 
 <div class="container section">
     <div class="row">
-        <div class="col-md-4 mb-5 mt-5">
+        <div class="col-12 col-lg-4 mb-5 mt-5">
             <div class="card shadow has-top-icon">
                 <img src="./assets/img/camion2-icon.png" alt="" class="card-top-icon">
                 <h3>Déménagements spéciaux</h3>
                 <p>Il peut y avoir des exigences particulières en matière de déménagement pour le transport d’articles fragiles ou de valeur tel que les miroirs fragiles, les antiquités, les armoires anciennes, les tableaux et autres œuvres d’art. Ces objets nécessitent une manipulation précise et une protection spécialement adaptée. <strong>Ces objets sont garantis par notre service de déménagement professionnel expérimenté dans le transport de déménagements spéciaux.</strong></p>
             </div>
         </div>
-        <div class="col-md-4 mb-5 mt-5">
+        <div class="col-12 col-lg-4 mb-5 mt-5">
             <div class="card shadow has-top-icon">
                 <img src="./assets/img/demenageur.png" alt="" class="card-top-icon">
                 <h3>Monte Meubles</h3>
                 <p> Vous devez être équipés du bon matériel de déménagement pour que votre déménagement soit sans stress et sans souci. <strong>Notre service de déménagement Paris pas cher est là pour vous aider dans ces changements de vie.</strong>Flex Courses peut vous fournir le meilleur service pour vos besoins. Les monte-meubles sont des appareils utilisés pour faire monter ou descendre tous les types de meubles d’un étage à l’autre. Cet équipement mobile est très utile, notamment dans les zones difficiles d’accès ou les escaliers en colimaçon.</p>
             </div>
         </div>
-        <div class="col-md-4 mb-5 mt-5">
+        <div class="col-12 col-lg-4 mb-5 mt-5">
             <div class="card shadow has-top-icon">
                 <img src="./assets/img/maison2.png" alt="" class="card-top-icon">
                 <h3>Garde-meuble</h3>
                 <p>Il se peut que vous ne puissiez pas emménager immédiatement dans votre nouvelle maison en raison de problèmes de dernière minute. Vous souhaitez tout simplement mettre de côté vos meubles pendant que votre nouveau logement est en cours de rénovation. Notre entreprise de déménagement dispose également d’installations de stockage sécurisées équipées de caméras de surveillance. Là encore, les déménageurs transporteront et livreront vos biens, qui seront stockés en toute sécurité dans l’entrepôt, puis livrés à votre nouveau domicile, si vous le souhaitez.</p>
             </div>
         </div>
-        <div class="col-md-4 mb-5 mt-5">
+        <div class="col-12 col-lg-4 mb-5 mt-5">
             <div class="card shadow has-top-icon">
                 <img src="./assets/img/outils.png" alt="" class="card-top-icon">
                 <h3>Démontage / Montage mobilier</h3>
                 <p>En plus d’un déménagement rapide, nos déménageurs professionnels peuvent également démonter tous les meubles encombrants ou difficiles à transporter avant de les emballer, de les charger dans le camion de déménagement et de les monter une fois arriver à destination. D’autant plus que nous disposons de boxs afin de stocker tout votre matériel</p>
             </div>
         </div>
-        <div class="col-md-4 mb-5 mt-5">
+        <div class="col-12 col-lg-4 mb-5 mt-5">
             <div class="card shadow has-top-icon">
                 <img src="./assets/img/dossier.png" alt="" class="card-top-icon">
                 <h3>Formalités et démarches administratives</h3>
                 <p><strong>Notre entreprise de déménagement Paris pas cher peut effectuer des démarches à votre place le jour du déménagement,</strong> ou prendre en charge certaines des étapes déléguées par vous. Par exemple, ils peuvent demander aux autorités des permis de stationnement et de suspension, payer les péages urbains, enlever les déchets encombrants de votre déménagement, transférer les contrats d’énergie et, si vous déménagez à l’étranger, s’occuper des formalités douanières en votre nom.</p>
             </div>
         </div>
-        <div class="col-md-4 mb-5 mt-5">
+        <div class="col-12 col-lg-4 mb-5 mt-5">
             <div class="card shadow has-top-icon">
                 <img src="./assets/img/maison3.png" alt="" class="card-top-icon">
                 <h3>Matériels d’emballage et carton de déménagement</h3>
@@ -219,9 +248,9 @@
     </div>
 </div>
 
-<div class="container section">
-    <div class="row align-items-center">
-        <div class="col-md-7 left-side">
+<div class="container section demenagement-split">
+    <div class="row align-items-stretch">
+        <div class="col-12 col-lg-7 left-side">
             <div class="article">
                 <img src="./assets/img/img1.png" alt="">
                 <h2 class="text-center">Transfert d’entreprise à Paris et <span class="white-color">aux alentours</span></h2>
@@ -246,7 +275,7 @@
             <img class="icon-jaune" src="./assets/img/rond_jaune.png" data-anim="rotate" alt="icone jaune et bleu">
         </div>
 
-        <div class="col-md-5 right-side">
+        <div class="col-12 col-lg-5 right-side">
             <div class="stars">
                 <img src="./assets/img/stars.png" alt="">
             </div>

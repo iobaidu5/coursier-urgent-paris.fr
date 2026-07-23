@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -113,23 +142,23 @@
     <h2 class="text-center">Le spécialiste du transport des matériels spécial en France.</h2>
     <p class="text-center">Flex Courses est une entreprise dans le transport d’équipements spécialisés tels que des équipements de construction BTP, des matériels paysagistes et des équipements de studio photo. Nous sommes spécialisés dans ce domaine et, en tant qu’entreprise de transport de matériels spécial, nous travaillons sur la logistique de produits nécessitant une manutention individuelle en raison de leurs caractéristiques.</p>
 
-    <div class="row py-5">
-        <a href="#btp" class="col-md-4" data-anim="slideInBottom" style="color: black; text-decoration: none;">
-            <div class="card shadow-beneath mb-5">
+    <div class="row py-5 justify-content-center">
+        <a href="#btp" class="col-12 col-lg-4" data-anim="slideInBottom" style="color: black; text-decoration: none;">
+            <div class="card shadow-beneath h-auto mb-5">
                 <img src="./assets/img/materiels-btp.png" alt="Livraison spéciale" class="w-100 px-4 mb-4">
                 <h3 class="h5 text-center">Matériels BTP</h3>
             </div>
             <p class="text-center"> Nous offrons la solution idéale pour acheminer tout type de marchandise jusqu’au destinataire en un temps record et au coût le plus juste. Le respect des délais est particulièrement important pour les activités d’équipe professionnelle.</p>
         </a>
-        <a href="#paysagistes" class="col-md-4" data-anim="slideInBottom" data-delay="300" style="color: black; text-decoration: none;">
-            <div class="card shadow-beneath mb-5">
+        <a href="#paysagistes" class="col-12 col-lg-4" data-anim="slideInBottom" data-delay="300" style="color: black; text-decoration: none;">
+            <div class="card shadow-beneath h-auto mb-5">
                 <img src="./assets/img/materiels-paysagistes.png" alt="Livraison spéciale" class="w-100 px-4 mb-4">
                 <h3 class="h5 text-center">Matériels paysagistes</h3>
             </div>
             <p class="text-center"> La solution idéale pour acheminer vos matériels, équipement, etc. jusqu’à votre chantier en un temps record et au meilleur tarif du marché. Nous travaillons sur la logistique du matériel paysagiste qui, en raison de leurs caractéristiques, nécessite un service personnalisé.</p>
         </a>
-        <a href="#photo" class="col-md-4" data-anim="slideInBottom" data-delay="600" style="color: black; text-decoration: none;">
-            <div class="card shadow-beneath mb-5">
+        <a href="#photo" class="col-12 col-lg-4" data-anim="slideInBottom" data-delay="600" style="color: black; text-decoration: none;">
+            <div class="card shadow-beneath h-auto mb-5">
                 <img src="./assets/img/materiels-studios-photos.png" alt="Livraison spéciale" class="w-100 px-4 mb-4">
                 <h3 class="h5 text-center">Matériels studios photos</h3>
             </div>
@@ -138,22 +167,26 @@
     </div>
 </div>
 
-<div class="container"><a href="contact"><img src="./assets/img/know-more.png" alt="En savoir plus" class="d-block mx-auto"></a></div>
+<div class="section">
+    <div class="container">
+        <a href="contact" class="know-more-link d-block mx-auto">
+            <img src="./assets/img/know-more.png" alt="En savoir plus" class="w-100">
+        </a>
+    </div>
+</div>
 
 <div class="section py-5" id="btp">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/building.png" alt="Batiment" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2><span class="theme-color">Transport de</span> matériel BTP</h2>
                 <p>Pour répondre aux exigences du bâtiment et des travaux publics, Flex Courses, service de transport de matériel BTP, vous aide à assurer vos chantiers sans délai grâce à son savoir-faire en transport exceptionnel. Nous gérons l’acheminement des pièces majeures des grands projets de construction (poutres, cuves, passerelles, voussoirs), le matériel et les fournitures de travaux directement sur le chantier.</p>
                 <p>Faites appel à Flex Courses, votre transitaire expert du BTP, pour une livraison rapide et sûre de l’ensemble de vos commandes, engins et équipements.</p>
-
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
-
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/building.png" alt="Batiment" class="w-100">
             </div>
         </div>
     </div>
@@ -161,17 +194,15 @@
 
 <div class="section py-5" id="paysagistes">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row image-first-desktop">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInLeft">
                 <img src="./assets/img/transport-materiel-paysagiste.png" alt="Batiment" class="w-100">
             </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInRight" data-delay="400">
                 <h2>Transport de <span class="theme-color">matériel paysagiste</span></h2>
                 <p>Vous êtes paysagiste et avez besoin occasionnellement de service de transport de matériel, charges lourdes pour un de vos chantiers de réaménagement de jardin ? Flex Courses est à votre service pour vous accompagner pour des missions de transport de matériel paysagiste lors de la réalisation de votre chantier.</p>
                 <p>Contactez Flex Courses pour bénéficier d’un service de transport de vos matériels de paysagiste à prix compétitif. Nous pouvons prendre en charge la transportation de votre matériel de A à Z.</p>
-
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
-
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
             </div>
         </div>
@@ -180,18 +211,16 @@
 
 <div class="section py-5" id="photo">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/transport-materiel-photo.png" alt="Batiment" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2><span class="theme-color">Transport de</span> matériel studio photos</h2>
                 <p>Flex Courses organise, coordonne et exécute vos opérations de transport de matériel studio photo dans toute l’Île-de-France. Pour cela, nous mettons en œuvre, toute notre expertise, nos moyens d’équipement de transport les plus innovants pour éviter toute incidence sûre durant la transportation de vos équipements.</p>
                 <p>Notre équipe chez Flex Courses est là pour vous conseiller et vous accompagner lors du transport de matériel studio photo. N’hésitez pas à nous contacter ou nous demander votre devis gratuit, nous nous ferons un plaisir de vous aider.</p>
-
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
-
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/transport-materiel-photo.png" alt="Batiment" class="w-100">
             </div>
         </div>
     </div>

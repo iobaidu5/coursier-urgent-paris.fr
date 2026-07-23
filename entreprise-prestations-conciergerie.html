@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -115,8 +144,8 @@
     <p>Contactez-nous chez Flex Courses pour savoir comment nous pouvons vous aider. Nous nous chargeons de vos tâches les plus exigeantes en vous proposant une prestation de conciergerie privée haut de gamme avec chauffeur. Notre prestation de conciergerie intervient dans toute la région Île-de-France avec professionnalisme et ponctualité.</p>
 
     <div class="row py-5 justify-content-center">
-        <a href="#demenagements" class="col-md-4" data-anim="slideInBottom" style="color: black; text-decoration: none;">
-            <div class="card shadow-beneath mb-5">
+        <a href="#demenagements" class="col-12 col-lg-4" data-anim="slideInBottom" style="color: black; text-decoration: none;">
+            <div class="card shadow-beneath h-auto mb-5">
                 <img src="./assets/img/poste.png" alt="Livraison spéciale" class="w-100 px-4 mb-4">
                 <h3 class="h5 text-center">Dépôt de colis aux bureaux de poste</h3>
             </div>
@@ -140,23 +169,27 @@
 </div>
 
 <div class="section">
-    <div class="container"><a href="contact"><img src="./assets/img/know-more.png" alt="En savoir plus" class="d-block mx-auto"></a></div>
+    <div class="container">
+        <a href="contact" class="know-more-link d-block mx-auto">
+            <img src="./assets/img/know-more.png" alt="En savoir plus" class="w-100">
+        </a>
+    </div>
 </div>
 
 <div class="section py-5" id="demenagements">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/colis-poste.png" alt="Batiment" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2><span class="theme-color">Dépots de tous vos colis </span> en bureaux de poste</h2>
                 <p>Avec notre prestation de conciergerie, nul besoin de se rendre au point relai ou de faire la queue au bureau de poste ! Vous pouvez faire enlever votre colis par un de nos coursiers à votre domicile ou à votre travail, pour le déposer aux bureaux de poste en toute sécurité et confidentialité.</p>
                 <p>Nous proposons les meilleures prestations de conciergerie coursier. Vous pouvez choisir la meilleure option parmi les nombreuses offres à tarif réduit que nous proposons. Nous sommes disponibles pour répondre à vos questions en ligne ou par téléphone.</p>
 
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
 
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/colis-poste.png" alt="Batiment" class="w-100">
             </div>
         </div>
     </div>
@@ -183,18 +216,18 @@
 
 <div class="section py-5" id="transport-meubles">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/voyage-pro.png" alt="Batiment" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2><span class="theme-color">Service de transport de personnel </span>en voyage professionnel</h2>
                 <p>Notre prestation de conciergerie vous assure un service haut de gamme en désignant un transport et un chauffeur professionnel pour vous accompagner que ce soit pour vos rendez-vous ou vos sorties dans le cadre professionnel.</p>
                 <p>Nous nous adaptons aux contraintes pour mieux répondre à vos besoins : nous offrons une prestation de conciergerie pour répondre à tous vos besoins, 24h/24, 365 jours par an.</p>
 
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
 
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/voyage-pro.png" alt="Batiment" class="w-100">
             </div>
         </div>
     </div>

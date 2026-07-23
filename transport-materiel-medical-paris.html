@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -115,19 +144,19 @@
     <p class="text-center mb-5">Chez Flex Courses, nous sommes engagés à offrir un service de transport de matériel médical et pharmaceutique d'une fiabilité irréprochable à Paris. Nous comprenons l'importance cruciale de chaque <strong>livraison</strong> pour nos clients du secteur médical. C'est pourquoi nous avons mis en place une équipe dédiée, formée spécifiquement pour assurer la sécurité et la rapidité de chaque transport, qu'il s'agisse d'<strong>équipements</strong> de haute technologie ou de produits pharmaceutiques sensibles.</p>
     <h2 class="text-center">Pourquoi choisir Flex Courses ?</h2>
     <div class="row py-5">
-        <div class="col-md-4" data-anim="slideInBottom">
+        <div class="col-12 col-lg-4" data-anim="slideInBottom">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Fiabilité et Expertise</h3>
             </div>
             <p class="text-center">Nous sommes conscients des enjeux liés au transport de matériel médical. C'est pourquoi nous mettons un point d'honneur à garantir la fiabilité de chaque livraison. Nos chauffeurs, formés aux exigences spécifiques du secteur, savent que chaque minute compte et que la précision est essentielle. Forts de notre expérience, nous savons anticiper et répondre aux défis logistiques pour minimiser tout risque d'erreur ou de retard.</p>
         </div>
-        <div class="col-md-4" data-anim="slideInBottom">
+        <div class="col-12 col-lg-4" data-anim="slideInBottom">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Sécurité Maximale</h3>
             </div>
             <p class="text-center">La sécurité de vos équipements est notre priorité. Nos véhicules sont équipés des dernières technologies pour assurer une protection optimale pendant le transport. Nos chauffeurs suivent des formations rigoureuses pour manipuler et livrer le matériel médical conformément aux normes les plus strictes. Cette vigilance nous permet de garantir que vos produits arrivent en parfait état, sans compromis sur leur intégrité.</p>
         </div>
-        <div class="col-md-4" data-anim="slideInBottom">
+        <div class="col-12 col-lg-4" data-anim="slideInBottom">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Disponibilité 24h/24 et 7j/7</h3>
             </div>
@@ -135,13 +164,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Économie de temps et de coûts</h3>
             </div>
             <p class="text-center">En nous confiant le transport de votre matériel médical, vous optimisez non seulement votre temps, mais aussi vos coûts. Notre expertise nous permet d'éviter les retards, les erreurs de livraison, ou les dommages matériels qui pourraient engendrer des frais supplémentaires. Notre efficacité se traduit par des économies réelles pour votre établissement, tout en garantissant une livraison rapide et sécurisée.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Flexibilité et Adaptabilité</h3>
             </div>
@@ -150,15 +179,21 @@
     </div>
 </div>
 
-<div class="container"><a href="contact"><img src="./assets/img/know-more.png" alt="En savoir plus" class="d-block mx-auto"></a></div>
+<div class="section">
+    <div class="container">
+        <a href="contact" class="know-more-link d-block mx-auto">
+            <img src="./assets/img/know-more.png" alt="En savoir plus" class="w-100">
+        </a>
+    </div>
+</div>
 
 <div class="section py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 center-y" data-anim="slideInLeft">
+            <div class="col-12 center-y" data-anim="slideInLeft">
                 <h2>Contactez-nous dès maintenant pour le transport de votre matériel médical</h2>
                 <p>Vous avez besoin d'un service de transport fiable pour votre matériel médical à Paris ? Ne laissez rien au hasard ! Contactez-nous dès aujourd'hui pour découvrir comment Flex Courses peut répondre à vos exigences les plus strictes en matière de livraison. Notre équipe est prête à vous accompagner 24h/24 et 7j/7, garantissant une prise en charge rapide et sécurisée de vos équipements. N'attendez plus, faites confiance à des experts pour vos livraisons critiques. Nous sommes à votre disposition pour toute demande de renseignements ou de devis personnalisé.</p>
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
             </div>
         </div>

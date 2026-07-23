@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -117,14 +146,11 @@
 
 <div class="section bg-wave">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
-                <div class="icon" style="display: flex; justify-content: flex-start; margin-bottom: -70px; width: auto; position: relative; top: -63px">
-                    <img src="./assets/img/triangles.png" alt="Triangles" class="rotate" style="margin-bottom: -70px; width: fit-content">
-                </div>
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInLeft">
                 <img src="./assets/img/coursier-paris-pas-cher-2.png" alt="Cartons" class="w-100">
             </div>
-            <div class="col-md-6 center-y card bg-white cadre cadre-coursier" data-anim="slideInRight" data-delay="400">
+            <div class="col-12 col-lg-6 text-col center-y card bg-white cadre cadre-coursier" data-anim="slideInRight" data-delay="400">
                 <h2>Transport Express sur-mesure - De Corbeil-Essonnes à Evry, Les Ulis et au-delà</h2>
                 <p>Flex Courses n'est pas seulement une entreprise de transport ; c'est une promesse de réactivité et d'adaptabilité. Nos services express sont le résultat d'une planification précise et d'une exécution impeccable. De <strong>Étampes</strong> à <strong>Palaiseau</strong>, en passant par Les Ulis, nous couvrons l'intégralité du 91 et au-delà, avec des solutions de transport express sur-mesure. Notre flotte de véhicules performants et nos chauffeurs expérimentés sont le gage d'un service rapide et sûr, adapté à vos besoins les plus pressants.</p>
                 <h2>Pourquoi choisir un coursier de chez Flex Courses</h2>
@@ -143,13 +169,13 @@
 
 <div class="section py-5" id="recherche-coursier">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/coursier-paris-pas-cher-1.png" alt="Camionnette" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2>Livraison Rapide et fiable de vos colis en Île-de-France - Réservez votre Coursier maintenant</h2>
                 <p>Dans l’agitation de l’Île-de-France, une livraison rapide et fiable n’est pas seulement un service, c’est une nécessité. Flex Courses s'élève à cette exigence avec un service de livraison de colis express. Disponible 24h/24 et 7j/7, notre service est conçu pour offrir rapidité et fiabilité, assurant que chaque colis atteint sa destination en temps voulu. En réservant votre coursier chez nous, vous choisissez une entreprise qui fait de la ponctualité et de la sécurité ses priorités absolues.</p>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/coursier-paris-pas-cher-1.png" alt="Camionnette" class="w-100" style="z-index: 1">
             </div>
         </div>
     </div>

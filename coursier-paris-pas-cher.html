@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -119,14 +148,11 @@
 
 <div class="section bg-wave">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
-                <div class="icon" style="display: flex; justify-content: flex-start; margin-bottom: -70px; width: auto; position: relative; top: -63px">
-                    <img src="./assets/img/triangles.png" alt="Triangles" class="rotate" style="margin-bottom: -70px; width: fit-content">
-                </div>
-                <img src="./assets/img/coursier-paris-pas-cher-1.png" alt="Camionnette" class="w-100" style="z-index: 1">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInLeft">
+                <img src="./assets/img/coursier-paris-pas-cher-1.png" alt="Camionnette" class="w-100">
             </div>
-            <div class="col-md-6 center-y card bg-white cadre cadre-coursier" data-anim="slideInRight" data-delay="400">
+            <div class="col-12 col-lg-6 text-col center-y card bg-white cadre cadre-coursier" data-anim="slideInRight" data-delay="400">
                 <h2>Service de coursier Paris pas cher pour particulier</h2>
                 <p>L’entreprise de <strong>coursier Paris pas cher</strong> a travaillé avec de nombreux professionnels au fil des ans. En effet, nous avons trouvé chez nos coursiers les qualités requises des vrais professionnels : sérieux, compétence, efficacité et prix juste.</p>
                 <p>C’est pourquoi <strong>nous avons voulu mettre notre professionnalisme à la disposition des particuliers qui veulent faire leurs affaires à Paris et en Île-de-France</strong> à un prix raisonnable. Les particuliers ont droit au meilleur service. Nos coursiers professionnels interviennent dans tout Paris, la banlieue et l’Île-de-France. Flex Courses proposent un choix de types de livraison en fonction de la distance et du colis. Notre société de messagerie bon marché vous garantit la solution la plus rapide, la plus économique et la plus écologique à chaque fois.</p>
@@ -139,14 +165,14 @@
 
 <div class="section py-5" id="recherche-coursier">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/coursier-paris-pas-cher-2.png" alt="Cartons" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2><strong>En recherche d’un service urgent de coursier Paris pas cher ?</strong></h2>
                 <p>Les livreurs de Flex Courses mettent tout en œuvre pour vous fournir un service de qualité répondant à vos besoins. En plus de notre service de livraison à Paris et en Île-de-France, nous proposons également des livraisons d’urgence et express !</p>
                 <p>En effet, il y a des demandes qui ne peuvent pas attendre, tant dans votre vie personnelle que professionnelle. <strong>Laissez-nous, un prestataire de services fiable offrant une livraison express haut de gamme et une livraison d’urgence haut de gamme, vous faciliter la vie.</strong> Vous pouvez compter sur nous pour vous fournir des tarifs stables et raisonnables pour ces situations délicates ! Notre mission est de réduire les coûts associés à ces services, tout en restant proches de votre vie quotidienne. En changeant d’entreprise avec Flex Courses, notre service de livraison bon marché à Paris, vous pouvez économiser de l’argent avec une qualité égale ou supérieure ! Vous pouvez demander un devis gratuit maintenant et réserver un de nos services express à Paris pour répondre à vos besoins. Demain ou dans une semaine ? Simplifiez-vous la vie et trouvez le bon service pour votre livraison.</p>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/coursier-paris-pas-cher-2.png" alt="Cartons" class="w-100">
             </div>
         </div>
     </div>
@@ -154,11 +180,11 @@
 
 <div class="section py-5" id="service-coursier">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row image-first-desktop">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInLeft">
                 <img src="./assets/img/coursier-paris-pas-cher-3.png" alt="Cartons pas dans camionnette" class="w-100">
             </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInRight" data-delay="400">
                 <h2>Service de coursier pour grand volume pas cher à Paris</h2>
                 <p>Vous avez une palette avec des charges importantes à livrer à Paris, en banlieue ou en Île-de-France ? Vous êtes au bon endroit ! <strong>Notre entreprise de coursier Paris pas cher possède de nombreuses années d’expérience dans un secteur en plein essor.</strong> Aujourd’hui, n’importe qui, professionnel ou particulier, peut avoir besoin d’un coursier. Sur notre site de coursier Paris pas cher, vous pouvez bénéficier d’un service de qualité grâce à une équipe d’experts qui connaissent leur métier et qui, surtout, sont parfaitement capables de livrer des colis volumineux. La livraison et le transport sont des métiers qui ne s’improvisent pas, c’est pourquoi nous nous entourons de coursiers ayant un bon sens du service à la clientèle et les formons selon notre politique de travail afin qu’ils puissent travailler de manière aussi rapide, autonome et efficace que possible. Tous les coursiers sont en mesure de collecter de gros volumes de colis de clients. Dynamiques et attentifs aux besoins de leurs clients, ils veillent à ce que les livraisons soient effectuées dans des délais courts et à ce que l’état des colis soit contrôlé tout au long de la livraison. Pour bénéficier d’une livraison express abordable et d’une livraison d’urgence, vous n’avez que quelques clics à faire sur notre site Flex Courses !</p>
             </div>
@@ -167,7 +193,7 @@
 </div>
 
 <section id="meilleurs-coursiers">
-    <div class="icon" style="display: flex; justify-content: flex-end; margin-bottom: -70px; width: auto; position: relative; top: -150px">
+    <div class="icon decorative-float" style="display: flex; justify-content: flex-end; margin-bottom: -70px; width: auto; position: relative; top: -150px">
         <img src="./assets/img/triangles-2.png" alt="Triangles" class="rotate" style="margin-bottom: -70px; width: fit-content">
     </div>
     <div class="container">
@@ -183,8 +209,11 @@
 
 <div class="section py-5" id="prestations-coursier">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/equipe.png" alt="Cartons" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2>Les prestations proposées avec coursier Paris pas cher</h2>
                 <p>Courrier express à 2 et 4 roues : vélos, camionnettes et camions pour prendre en charge et livrer vos marchandises dans l’heure, la demi-journée ou la journée.</p>
                 <p>Spécialisés dans le transport urbain, nous assurons vos livraisons express sur l’ensemble de la région Île-de-France.</p>
@@ -195,9 +224,6 @@
                 <p><strong>Nos dispatchers utilisent des solutions technologiques de pointe.</strong> </p>
                 <p>Nous sommes en mesure de connaitre l’emplacement géographique de tous les coursiers en temps réel.</p>
                 <p>Nous optimisons chaque itinéraire et garantissons une livraison rapide et respectueuse de l’environnement.</p>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/equipe.png" alt="Cartons" class="w-100">
             </div>
         </div>
     </div>

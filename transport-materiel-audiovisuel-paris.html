@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -115,19 +144,19 @@
     <p class="text-center mb-5">Chez Flex Courses, nous nous engageons à offrir un service de transport de matériel audiovisuel d'une fiabilité irréprochable à Paris. Nous comprenons l'importance cruciale de chaque livraison pour nos clients du secteur. Notre équipe dédiée est formée spécifiquement pour assurer la sécurité et la rapidité de chaque transport, qu'il s'agisse de caméras haute définition, de systèmes de son sophistiqués ou d'équipements d'éclairage sensibles.</p>
     <h2 class="text-center">Pourquoi choisir Flex Courses ?</h2>
     <div class="row py-5">
-        <div class="col-md-4" data-anim="slideInBottom">
+        <div class="col-12 col-lg-4" data-anim="slideInBottom">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Expertise dans le domaine audiovisuel</h3>
             </div>
             <p class="text-center">Nous connaissons les enjeux liés au transport de matériel audiovisuel. Nos chauffeurs sont formés aux exigences spécifiques du secteur, conscients que la précision et le soin sont essentiels. Notre expérience nous permet d'anticiper et de répondre aux défis logistiques propres à ce type d'équipement.</p>
         </div>
-        <div class="col-md-4" data-anim="slideInBottom">
+        <div class="col-12 col-lg-4" data-anim="slideInBottom">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Protection maximale des équipements</h3>
             </div>
             <p class="text-center">La sécurité de votre matériel audiovisuel est notre priorité absolue. Nos véhicules sont équipés de systèmes de protection avancés pour assurer une stabilité optimale pendant le transport. Nous utilisons des emballages spécialisés et des techniques de manipulation adaptées pour protéger vos équipements sensibles contre les chocs et les vibrations.</p>
         </div>
-        <div class="col-md-4" data-anim="slideInBottom">
+        <div class="col-12 col-lg-4" data-anim="slideInBottom">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Service disponible en continu</h3>
             </div>
@@ -135,13 +164,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Optimisation des coûts et des délais</h3>
             </div>
             <p class="text-center">En nous confiant le transport de votre matériel audiovisuel, vous optimisez vos ressources. Notre efficacité permet d'éviter les retards coûteux et les risques de dommages. Nous nous engageons à livrer votre équipement dans les temps, contribuant ainsi au bon déroulement de vos projets.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="card shadow-beneath mb-5 h-auto">
                 <h3 class="h5 text-center">Solutions sur mesure</h3>
             </div>
@@ -150,15 +179,21 @@
     </div>
 </div>
 
-<div class="container"><a href="contact"><img src="./assets/img/know-more.png" alt="En savoir plus" class="d-block mx-auto"></a></div>
+<div class="section">
+    <div class="container">
+        <a href="contact" class="know-more-link d-block mx-auto">
+            <img src="./assets/img/know-more.png" alt="En savoir plus" class="w-100">
+        </a>
+    </div>
+</div>
 
 <div class="section py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 center-y" data-anim="slideInLeft">
+            <div class="col-12 center-y" data-anim="slideInLeft">
                 <h2>Contactez-nous pour le transport de votre matériel audiovisuel</h2>
                 <p>Vous recherchez un service de transport fiable pour votre matériel audiovisuel à Paris ? Ne laissez rien au hasard ! Contactez Flex Courses dès aujourd'hui pour découvrir comment nous pouvons répondre à vos exigences les plus strictes en matière de livraison. Notre équipe est prête à vous accompagner à tout moment, garantissant une prise en charge rapide et sécurisée de vos équipements précieux. Faites confiance à des experts pour vos livraisons critiques. Nous sommes à votre disposition pour toute demande de renseignements ou de devis personnalisé.</p>
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
             </div>
         </div>

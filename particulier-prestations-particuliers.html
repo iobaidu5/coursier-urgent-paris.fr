@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -115,23 +144,23 @@
 
 <div class="container section">
 
-    <div class="row">
-        <a href="#demenagements" class="col-md-4" data-anim="slideInBottom" style="color: black; text-decoration: none;">
-            <div class="card shadow-beneath mb-5">
+    <div class="row justify-content-center">
+        <a href="#demenagements" class="col-12 col-lg-4" data-anim="slideInBottom" style="color: black; text-decoration: none;">
+            <div class="card shadow-beneath h-auto mb-5">
                 <img src="./assets/img/demenagement.png" alt="Livraison spéciale" class="w-100 px-4 mb-4" style="object-fit: contain">
                 <h3 class="h5 text-center">Petits et grand déménagements</h3>
             </div>
             <p class="text-center">Un petit ou un grand déménagement peut être à l’origine de nombreux soucis, car il implique de nombreux changements de vie, et ce, dans le cadre privé ou professionnel. Lorsque votre déménagement approche, nos déménageurs vous apportent leur professionnalisme grâce à une logistique de pointe et un savoir-faire.</p>
         </a>
-        <a href="#location" class="col-md-4" data-anim="slideInBottom" data-delay="300" style="color: black; text-decoration: none;">
-            <div class="card shadow-beneath mb-5">
+        <a href="#location" class="col-12 col-lg-4" data-anim="slideInBottom" data-delay="300" style="color: black; text-decoration: none;">
+            <div class="card shadow-beneath h-auto mb-5">
                 <img src="./assets/img/location.png" alt="Livraison spéciale" class="w-100 px-4 mb-4" style="object-fit: contain">
                 <h3 class="h5 text-center">Location avec chauffeur</h3>
             </div>
             <p class="text-center">Que vous changiez de maison ou de bureau, vous aurez besoin d’un véhicule pour transporter vos objets volumineux, Flex Courses vous propose ses services de location avec chauffeur. Vous n’aurez plus qu’à préparer les objets ou équipements à transporter et notre chauffeur les rangera et optimisera le tout à l’intérieur. </p>
         </a>
-        <a href="#transport-meubles" class="col-md-4" data-anim="slideInBottom" data-delay="600" style="color: black; text-decoration: none;">
-            <div class="card shadow-beneath mb-5">
+        <a href="#transport-meubles" class="col-12 col-lg-4" data-anim="slideInBottom" data-delay="600" style="color: black; text-decoration: none;">
+            <div class="card shadow-beneath h-auto mb-5">
                 <img src="./assets/img/transport.png" alt="Livraison spéciale" class="w-100 px-4 mb-4" style="object-fit: contain">
                 <h3 class="h5 text-center">Transports de petits meubles</h3>
             </div>
@@ -141,23 +170,25 @@
 </div>
 
 <div class="section">
-    <div class="container"><a href="contact"><img src="./assets/img/know-more.png" alt="En savoir plus" class="d-block mx-auto"></a></div>
+    <div class="container">
+        <a href="contact" class="know-more-link d-block mx-auto">
+            <img src="./assets/img/know-more.png" alt="En savoir plus" class="w-100">
+        </a>
+    </div>
 </div>
 
 <div class="section py-5" id="demenagements">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/orga-demenagement.png" alt="Batiment" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2><span class="theme-color">L'organisation de petits et </span> grands déménagements</h2>
                 <p>Petit ou grand déménagement, c’est une étape primordiale qui ne doit jamais être prise à la légère. Chez Flex Courses, nous vous soulagerons de nombreux soucis et tracas concernant toute l’organisation technique, logistique pour petit et grand déménagement en Île-de-France. Votre satisfaction sera d’autant plus grande en optant pour notre service de déménagement de qualité !</p>
                 <p>Flex Courses est une entreprise dédiée aux transports et déménagements. Nous vous proposons un service rapide, économique et professionnel. Faites appel à notre service de professionnels qualifiés pour bénéficier de tout leur savoir-faire dans le domaine.</p>
-
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
-
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/orga-demenagement.png" alt="Batiment" class="w-100">
             </div>
         </div>
     </div>
@@ -165,17 +196,15 @@
 
 <div class="section py-5" id="location">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row image-first-desktop">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInLeft">
                 <img src="./assets/img/location-chauffeur.png" alt="Batiment" class="w-100">
             </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInRight" data-delay="400">
                 <h2>Nos services de location <span class="theme-color">avec chauffeur</span></h2>
                 <p>Que ce soit pour un déménagement de particuliers ou de professionnels, la location avec chauffeur reste toujours une solution à la fois fort pratique et économique. En effet, de nombreux services sont inclus et pris en charge directement par notre entreprise de déménagement pouvant vous faire économiser sur le cout global de votre déménagement en Île-de-France.</p>
                 <p>Notre service de location avec chauffeur pour le déménagement est fait pour vous ! C’est aussi une solution idéale qui vous évite d’éventuelles galères et mauvaises surprises, en fonction de vos besoins, de votre budget et aussi de vos disponibilités.</p>
-
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
-
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
             </div>
         </div>
@@ -184,18 +213,16 @@
 
 <div class="section py-5" id="transport-meubles">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 center-y" data-anim="slideInLeft">
+        <div class="row text-image-row">
+            <div class="col-12 col-lg-6 image-col center-y" data-anim="slideInRight" data-delay="400">
+                <img src="./assets/img/transport-meubles.png" alt="Batiment" class="w-100">
+            </div>
+            <div class="col-12 col-lg-6 text-col center-y" data-anim="slideInLeft">
                 <h2><span class="theme-color">Nos services de transport</span> de petits meubles</h2>
                 <p>Nous vous proposons des solutions clés en main pour que le transport de petits meubles comme : votre canapé, de votre table, de votre lit, de votre armoire ou encore de vos équipements électroménagers s’effectue comme vous l’entendez. Confiez-vous à notre service et à nos experts déménageurs, une alternative plus simple, pratique, rassurante et économique, notre équipe saura se montrer réactive pour répondre à tous vos besoins en transport de petit meuble pas cher en Île-de-France.</p>
                 <p>Flex Courses vous facilite vos déménagements et transports de petit meuble. Contactez-nous ou demandez un devis directement en ligne pour toute information concernant nos prestations ou sur le transport des petits meubles.</p>
-
-                <img src="./assets/img/deco.png" alt="Décoration" style="margin-bottom: -70px; height: 70px; width: fit-content;">
-
+                <img src="./assets/img/deco.png" alt="Décoration" class="deco-zigzag">
                 <a href="./devis.html" class="btn btn-info mx-auto"><span>DEVIS GRATUIT</span></a>
-            </div>
-            <div class="col-md-6 center-y" data-anim="slideInRight" data-delay="400">
-                <img src="./assets/img/transport-meubles.png" alt="Batiment" class="w-100">
             </div>
         </div>
     </div>

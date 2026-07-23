@@ -81,19 +81,48 @@
   <a href="./index.html">
       <img src="./assets/img/logo-v2.png" alt="" id="navbar-logo">
   </a>
-  <div id="navbar-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+  <div id="navbar-toggle" onclick="toggleNavbar()" role="button" tabindex="0" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-nav">
       <div></div>
       <div></div>
       <div></div>
   </div>
+  <div id="navbar-backdrop" onclick="closeNavbar()"></div>
   <nav id="navbar-nav">
-      <a href="./index.html">Accueil</a>
-      <a href="./demenagement.html">Déménagement</a>
-      <a href="./nos-vehicules.html">Nos véhicules</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./devis.html" class="alt"><span>Devis</span></a>
+      <a href="./index.html" onclick="closeNavbar()">Accueil</a>
+      <a href="./demenagement.html" onclick="closeNavbar()">Déménagement</a>
+      <a href="./nos-vehicules.html" onclick="closeNavbar()">Nos véhicules</a>
+      <a href="./contact.html" onclick="closeNavbar()">Contact</a>
+      <a href="./devis.html" class="alt" onclick="closeNavbar()"><span>Devis</span></a>
   </nav>
 </div>
+<script>
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.toggle('open');
+    const isOpen = navbar.classList.contains('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  }
+  function closeNavbar() {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    navbar.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  document.getElementById('navbar-toggle').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleNavbar();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNavbar();
+  });
+</script>
 
   
 
@@ -112,14 +141,14 @@
 <div class="container">
     <h2>Votre transporteur de colis urgents en <span class="theme-color">quelques clics</span></h2>
     <div class="row">
-        <div class="mb-5 col-md-3 zoom-img-on-hover" data-anim="slideInLeft">
+        <div class="mb-5 col-12 col-lg-3 zoom-img-on-hover" data-anim="slideInLeft">
             <img src="./assets/img/coursier.png" alt="Mise à disposition d’un coursier" class="d-block mx-auto mb-4" style="height: 100px">
             <h3 class="p bold text-center">Mise à disposition d’un coursier</h3>
         </div>
         <div class="mb-5 col-md-6 align-flex-end d-none d-md-block" data-anim="slideInTop" data-delay="300">
             <img src="./assets/img/arrow-straight-right.png" alt="Flèche">
         </div>
-        <div class="mb-5 col-md-3 zoom-img-on-hover" data-anim="slideInLeft" data-delay="600">
+        <div class="mb-5 col-12 col-lg-3 zoom-img-on-hover" data-anim="slideInLeft" data-delay="600">
             <img src="./assets/img/check.png" alt="Tournée régulière" class="d-block mx-auto mb-5" style="height: 100px">
             <h3 class="p bold text-center">Tournée régulière</h3>
         </div>
@@ -128,7 +157,7 @@
         <div class="mb-5 col-md-4 text-end d-none d-md-block" data-anim="slideInLeft" data-delay="300">
             <img src="./assets/img/arrow-turn-right.png" alt="Flèche">
         </div>
-        <div class="mb-5 col-md-4 zoom-img-on-hover" data-anim="slideInBottom" data-delay="600">
+        <div class="mb-5 col-12 col-lg-4 zoom-img-on-hover" data-anim="slideInBottom" data-delay="600">
             <img src="./assets/img/box.png" alt="Livraison rapide " class="d-block mx-auto mb-4" style="height: 100px">
             <h3 class="p bold text-center">Livraison rapide </h3>
         </div>
@@ -141,28 +170,28 @@
 <div class="section bg-wave">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 my-5">
+            <div class="col-12 col-lg-6 my-5">
                 <div class="card shadow has-top-left-icon">
                     <img src="./assets/img/rapide.png" alt="" class="card-top-icon">
                     <h3>Livraison <span class="theme-color">rapide</span></h3>
                     <p> Nous pouvons assurer une livraison rapide et efficace de vos colis, même si vous avez besoin que le colis soit livré dans les plus brefs délais.</p>
                 </div>
             </div>
-            <div class="col-md-6 my-5">
+            <div class="col-12 col-lg-6 my-5">
                 <div class="card shadow has-top-left-icon">
                     <img src="./assets/img/suivi.png" alt="" class="card-top-icon">
                     <h3>Suivi en <span class="theme-color">temps réel</span></h3>
                     <p>Flex Courses vous propose un suivi en temps réel de votre colis, ce qui vous permet de suivre l'avancement de la livraison et de savoir où se trouve votre colis à tout moment.</p>
                 </div>
             </div>
-            <div class="col-md-6 my-5">
+            <div class="col-12 col-lg-6 my-5">
                 <div class="card shadow has-top-left-icon">
                     <img src="./assets/img/flexible.png" alt="" class="card-top-icon">
                     <h3>Options de livraison <span class="theme-color">flexibles</span></h3>
                     <p>Vous pouvez choisir parmi différentes options de livraison, telles que la livraison à une heure précise ou la livraison le lendemain matin, en fonction de vos besoins et de vos préférences.</p>
                 </div>
             </div>
-            <div class="col-md-6 my-5">
+            <div class="col-12 col-lg-6 my-5">
                 <div class="card shadow has-top-left-icon">
                     <img src="./assets/img/secure.png" alt="" class="card-top-icon">
                     <h3>Sécurité et <span class="theme-color">fiabilité</span></h3>
@@ -180,12 +209,12 @@
     <h2>Flex Courses, entreprise spécialisée dans le transport d’urgence</h2>
 
     <div class="row pb-5">
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="card blue-border">
                 <p>Nous disposons de notre propre réseau dans et autour de Paris, ce qui nous permet de toujours vous proposer le meilleur choix en fonction de votre mode de transport et de votre destination. Nous assurons quotidiennement des transports d’urgence dans tout Paris. Nous proposons des solutions adaptées à vos besoins. Nous disposons de notre propre flotte de véhicules, de la plus légère à la plus grande capacité. Cela nous permet de garantir un service flexible, de qualité et 100 % adapté à vos besoins.</p>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-lg-6">
             <div class="card blue-border floating-bottom-right">
                 <p>Notre entreprise est spécialisée dans les services de déménagement et de transport pour répondre à toutes les exigences de nos clients. Nous offrons une gamme complète de services qui comprend les déménagements résidentiels, les déménagements de longue distance, l'expédition et le transport, les déménagements d'entreprises, le montage des meubles, les expositions et les foires commerciales, le transport d'objets d'art, la logistique pour les événements et les séminaires d'entreprise. Nous sommes à votre disposition pour vous aider à planifier et à organiser votre déménagement ou votre transport de la manière la plus efficace et la plus simple possible.</p>
             </div>
