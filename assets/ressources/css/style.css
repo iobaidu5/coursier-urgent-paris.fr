@@ -296,6 +296,9 @@ p:last-child,
 }
 .card.shadow-beneath img {
   height: 200px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
   margin: auto;
 }
